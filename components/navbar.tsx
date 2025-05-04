@@ -42,7 +42,7 @@ export default function Navbar() {
 
   return (
     <div
-      className={`fixed top-0 left-0  right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0  right-0 z-30 transition-all duration-300 ${
         scrolled ? "bg-[#0a1a40]/90 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
@@ -50,7 +50,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 text-white">
-            <div className="w-70 h-30  rounded-lg flex items-center  justify-center">
+            <div className="w-50 h-20  rounded-lg flex items-center  justify-center">
             <Image 
   src={Logo} 
   alt="Logo" 

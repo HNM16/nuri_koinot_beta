@@ -1,17 +1,23 @@
 "use client"
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { useAppSelector } from "@/lib/redux/hooks"
-import { selectLanguage } from "@/lib/redux/features/languageSlice"
-import { useTranslation } from "@/lib/translations"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Pagination, Autoplay } from "swiper/modules"
-import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import Navbar from "@/components/navbar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Calendar, Clock, User, Tag, ChevronRight } from "lucide-react"
+import { selectLanguage } from "@/lib/redux/features/languageSlice"
+import { useAppSelector } from "@/lib/redux/hooks"
+import { useTranslation } from "@/lib/translations"
+import { motion } from "framer-motion"
+import { Calendar, ChevronRight, Clock, Tag, User } from "lucide-react"
+import { useState } from "react"
+import { Autoplay, Navigation, Pagination } from "swiper/modules"
+import { Swiper, SwiperSlide } from "swiper/react"
+import Image from 'next/image';
+import Ict from "@/public/ict.jpg"
+import Iee from "@/public/iee.webp"
+import Gen from "@/public/gen.jpg"
+
+
 
 // Import Swiper styles
 import "swiper/css"
@@ -29,7 +35,7 @@ export default function BlogPage() {
       title: "Как выбрать оптимальную конфигурацию сервера для вашего проекта",
       excerpt:
         "Рассказываем о ключевых параметрах, которые нужно учитывать при выборе сервера для различных типов проектов.",
-      image: "/placeholder.svg?height=400&width=800",
+      image: Ict,
       date: "15 апреля 2023",
       readTime: "8 мин",
       author: "Алексей Иванов",
@@ -39,7 +45,7 @@ export default function BlogPage() {
       title: "Обзор новых технологий виртуализации в 2023 году",
       excerpt:
         "Анализируем последние тенденции в области виртуализации и их влияние на производительность облачных серверов.",
-      image: "/placeholder.svg?height=400&width=800",
+      image: Iee,
       date: "2 марта 2023",
       readTime: "12 мин",
       author: "Мария Петрова",
@@ -49,7 +55,7 @@ export default function BlogPage() {
       title: "Как защитить ваш сервер от DDoS-атак",
       excerpt:
         "Практические рекомендации по настройке защиты от DDoS-атак и обеспечению бесперебойной работы вашего сервера.",
-      image: "/placeholder.svg?height=400&width=800",
+      image:Gen,
       date: "18 февраля 2023",
       readTime: "10 мин",
       author: "Дмитрий Сидоров",
@@ -171,8 +177,13 @@ export default function BlogPage() {
                   <SwiperSlide key={index}>
                     <div className="bg-[#0f1f4b] rounded-lg overflow-hidden">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-                        <div className="h-[250px] md:h-auto bg-[#0a1a40] flex items-center justify-center">
-                          <p className="text-white/50">Изображение статьи</p>
+                        <div className="h-[250px] md:h-auto  flex items-center justify-center">
+                        <Image 
+  src={post.image} 
+  alt={post.title} 
+  width={400} 
+  height={600} 
+/>
                         </div>
                         <div className="p-8">
                           <div className="flex items-center gap-4 mb-4">
@@ -221,7 +232,7 @@ export default function BlogPage() {
                         placeholder="Поиск статей..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="bg-[#0a1a40] border-[#0a1a40] text-white pr-10"
+                        className="bg-[#0a1a40] border-[#0a1a40] border-[1px] border-solid text-white pr-10"
                       />
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -265,7 +276,7 @@ export default function BlogPage() {
                     <Input
                       type="email"
                       placeholder="Ваш email"
-                      className="bg-[#0a1a40] border-[#0a1a40] text-white mb-4"
+                      className="bg-[#0a1a40] border-[#0a1a40] border-[1px] border-solid text-white mb-4"
                     />
                     <Button className="w-full bg-[#4f46e5] hover:bg-[#4f46e5]/90">Подписаться</Button>
                   </div>

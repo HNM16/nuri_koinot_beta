@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache"
 
 export async function sendContactForm(formData: FormData) {
-  // Simulate a delay to show loading state
+
   await new Promise((resolve) => setTimeout(resolve, 1500))
 
   // Get form data

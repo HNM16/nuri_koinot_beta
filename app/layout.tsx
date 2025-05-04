@@ -10,7 +10,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin', 'cyrillic'] })
 
 export const metadata: Metadata = {
-	title: 'Нури Койнот - Облачные серверы',
+	title: 'Нури Коинот - Облачные серверы',
 	description: 'Хостинг облачных серверов нового поколения',
 }
 

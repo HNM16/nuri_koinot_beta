@@ -11,6 +11,14 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules"
 import Footer from "@/components/footer"
 import Servers from "@/components/servers"
 import PricingCards from "@/components/pricing-cards"
+import Image from 'next/image';
+import ServerRoom from "@/public/personinserver.webp"
+import RoomServer from "@/public/serverroom.jpg"
+import Server from "@/public/provods.jpg"
+import Alex from "@/public/alex.jpg"
+import Maria from "@/public/maria.jpg"
+import Dima from "@/public/dima.webp"
+import Lena from "@/public/lena.jpg"
 
 // Import Swiper styles
 import "swiper/css"
@@ -27,7 +35,7 @@ export default function AboutPage() {
       title: "Инновации",
       description:
         "Мы постоянно внедряем новейшие технологии и решения для обеспечения максимальной производительности и надежности наших серверов.",
-      icon: (
+      icon: ( 
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -124,22 +132,22 @@ export default function AboutPage() {
     {
       name: "Алексей Иванов",
       position: "Генеральный директор",
-      image: "/placeholder.svg?height=300&width=300",
+      image: Alex,
     },
     {
       name: "Мария Петрова",
       position: "Технический директор",
-      image: "/placeholder.svg?height=300&width=300",
+      image: Maria,
     },
     {
       name: "Дмитрий Сидоров",
       position: "Руководитель отдела разработки",
-      image: "/placeholder.svg?height=300&width=300",
+      image: Dima,
     },
     {
       name: "Елена Смирнова",
       position: "Руководитель службы поддержки",
-      image: "/placeholder.svg?height=300&width=300",
+      image: Lena,
     },
   ]
 
@@ -188,8 +196,13 @@ export default function AboutPage() {
                           IT-инфраструктуры.
                         </p>
                       </div>
-                      <div className="h-[250px] bg-[#0a1a40] rounded-lg flex items-center justify-center">
-                        <p className="text-white/50">Место для изображения</p>
+                      <div className="h-[250px]  rounded-lg flex items-center justify-center">
+                      <Image 
+  src={RoomServer} 
+  alt="Person in Server Room" 
+  width={400} 
+  height={600} 
+/>
                       </div>
                     </div>
                   </div>
@@ -205,8 +218,14 @@ export default function AboutPage() {
                           высокий уровень сервиса.
                         </p>
                       </div>
-                      <div className="h-[250px] bg-[#0a1a40] rounded-lg flex items-center justify-center">
-                        <p className="text-white/50">Место для изображения</p>
+                      <div className="h-[250px]  rounded-lg flex items-center justify-center">
+                     
+                      <Image 
+  src={Server} 
+  alt="Person in Server Room" 
+  width={500} 
+  height={600} 
+/>
                       </div>
                     </div>
                   </div>
@@ -222,9 +241,15 @@ export default function AboutPage() {
                           всему миру.
                         </p>
                       </div>
-                      <div className="h-[250px] bg-[#0a1a40] rounded-lg flex items-center justify-center">
-                        <p className="text-white/50">Место для изображения</p>
-                      </div>
+                      <div className="h-[250px]  rounded-lg flex items-center justify-center">
+                      <Image 
+  src={ServerRoom} 
+  alt="Person in Server Room" 
+  width={400} 
+  height={600} 
+/>
+              
+                            </div>
                     </div>
                   </div>
                 </SwiperSlide>
@@ -293,7 +318,12 @@ export default function AboutPage() {
                     className="bg-[#0a1a40] rounded-lg overflow-hidden"
                   >
                     <div className="h-[250px] bg-[#0f1f4b] flex items-center justify-center">
-                      <p className="text-white/50">Фото сотрудника</p>
+                    <Image 
+                    src={member.image}
+                     alt="Sotrudniki"
+                     width={400}
+                     height={500}
+                      />
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-bold mb-1">{member.name}</h3>
